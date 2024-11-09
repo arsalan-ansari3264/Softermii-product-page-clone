@@ -45,10 +45,10 @@ const ContactUs = () => {
         </div>
 
         {/* Contact form and contact details container */}
-        <div className="max-w-5xl p-4 mx-auto mt-12 rounded-3xl shadow-4xl">
+        <div className="max-w-5xl p-4 mx-auto mt-12 lg:rounded-3xl lg:shadow-4xl">
           <div className="grid grid-cols-12 gap-6">
             {/* Left column with contact information and office addresses */}
-            <div className="relative col-span-5 p-8 text-white bg-contactGradient rounded-2xl">
+            <div className="relative order-last p-8 text-white lg:order-1 lg:col-span-5 col-span-full bg-contactGradient rounded-2xl">
               {/* Contact map image positioned at the bottom-right */}
               <div className="absolute bottom-0 right-0">
                 <img src={contacFormMap} alt="contact form map" />
@@ -113,7 +113,7 @@ const ContactUs = () => {
             </div>
 
             {/* Right column with contact form */}
-            <div className="col-span-7 px-8 py-9">
+            <div className="order-1 px-2 lg:order-2 lg:px-8 lg:col-span-7 col-span-full py-9">
               <form className="space-y-4 text-black">
                 {/* Form fields for contact details */}
                 <input
@@ -218,18 +218,22 @@ const ContactUs = () => {
                 </div>
 
                 {/* Submit button */}
-                <div className="hidden md:flex text-nowrap float-end">
-                  <button className="px-10 py-2 mt-16 text-white bg-gradient-to-r from-[#f3913b] to-[#f56627] rounded-md shadow-lg hover:from-[#e65100] hover:to-[#e65100]">
+                <div className="w-full lg:w-auto md:flex text-nowrap float-end">
+                  <button className=" w-full px-10 py-3 lg:mt-16  mt-12 text-white bg-gradient-to-r from-[#f3913b] to-[#f56627] rounded-xl shadow-lg hover:from-[#e65100] hover:to-[#e65100]">
                     Submit
                   </button>
                 </div>
               </form>
             </div>
+
+
+
+            
           </div>
         </div>
 
         {/* Section displaying certificates */}
-        <div className="flex items-center justify-between max-w-screen-lg mx-auto mt-16 certificate">
+        <div className="flex flex-wrap items-center justify-center order-2 max-w-screen-lg gap-8 px-2 mx-auto mt-16 lg:gap-12 lg:px-8 certificate">
           {certiData.map((item, index) => (
             <img src={item.img} alt="certificate" key={index} />
           ))}

@@ -9,29 +9,42 @@ import { footerLinks, footerNavLinks, iconsTab, dropdownLinks } from "./data";
 function Footer() {
   const [active, setActive] = useState(null);
 
+  // Scroll to top smoothly
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   const handleActive = (index) => {
     setActive(active === index ? null : index);
   };
+
   return (
     <>
       <footer className="bg-faqBackground font-primary">
-        <div className="container px-32 mx-auto py-14 ">
+        <div className="px-4 py-16 md:px-20 md:pt-32 sm:px-12 lg:px-20 xl:px-40 ">
           {/* footer div all */}
           <div className="flex justify-between flex-col md:flex-row  items-center md:items-start  md:gap-[5rem] text-left">
             {/* logo side */}
-            <div className="flex flex-col w-1/4 gap-8 py-4 md:p-0 ">
-              <img
-                src={blackSoftermiiLogo}
-                alt="footer_logo"
-                className="w-[18rem]"
-              />
-              <p className="text-[15px] font-medium text-secondary">
+            <div className="flex flex-col items-center justify-center w-full gap-8 py-4 lg:items-start lg:justify-start lg:w-1/4 md:p-0 ">
+              <div className="flex items-center justify-between w-full">
+                <img
+                  src={blackSoftermiiLogo}
+                  alt="footer_logo"
+                  className="w-[18rem] "
+                />
+                <button onClick={scrollToTop}>
+                  <img src={arrowUp} alt="back to top" />
+                </button>
+              </div>
+              <p className="text-[15px] hidden lg:block  font-medium text-secondary">
                 10828 Fruitland Dr Studio City, CA 91604
               </p>
-              <p className="text-[15px] font-semibold text-black">
+              <p className="text-[15px] hidden lg:block font-semibold text-black">
                 +1 (424) 533-5520
               </p>
-              <p className="text-[15px] font-semibold text-black]">
+              <p className="text-[15px] hidden lg:block font-semibold text-black]">
                 info@softermii.com
               </p>
               {/* socials */}
@@ -51,7 +64,7 @@ function Footer() {
             </div>
 
             {/* link side */}
-            <div className="relative grid w-3/4 grid-cols-3 gap-x-6 gap-y-10 ">
+            <div className="relative hidden w-3/4 grid-cols-3 lg:grid gap-x-6 gap-y-10 ">
               {footerNavLinks.map((item, index) => (
                 <div
                   className="flex flex-col gap-3 font-semibold text-secondary"
@@ -116,12 +129,12 @@ function Footer() {
           </div>
         </div>
         {/* footer end  copyright section */}
-        <div className="flex items-center justify-between px-16 py-4 border-t border-gray-200">
-          <div className="flex gap-4">
+        <div className="flex flex-col items-center justify-between gap-4 px-16 py-4 border-t border-gray-200 lg:flex-row">
+          <div className="flex flex-col items-center order-2 gap-4 lg:order-1 lg:flex-row">
             <p>© 2024 — Softermii Inc. All rights reserved.</p>
-            <img src={dmcaBadge} alt="" />
+            <img src={dmcaBadge} alt="protected" className="w-40" />
           </div>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap items-center justify-center order-1 gap-6 font-semibold lg:order-2 text-nowrap">
             <p>Privacy Policy</p>
             <p>Terms of Service</p>
             <p>Web Content Accessibility Policy</p>

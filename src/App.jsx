@@ -17,19 +17,19 @@ function App() {
   return (
     <>
       <Navbar />
-      {/* <Hero />
-     <Section2 />
+      <Hero />
+      <Section2 />
       <Section3 />
       <Section4 />
-      <Section5 /> 
-     <Section6/>
-      <Section7/>
-       <Section8/>
+      <Section5 />
+      <Section6 />
+      <Section7 />
+      <Section8 />
       <Section9 />
-         <Section10 />
-      <FaqComponent />*/}
+      <Section10 />
+      <FaqComponent />
       <ContactUs />
-      {/*     <Footer /> */}
+      <Footer />
     </>
   );
 }
